@@ -1,0 +1,32 @@
+
+//
+import 'dart:async';
+
+import 'package:qrreaderapp/src/models/scan_model.dart';
+
+class Validators{
+
+  // ingresa informacion y sale diferente
+  final validateGeo = StreamTransformer<List<ScanModel>,List<ScanModel>>.fromHandlers(
+    handleData: (scans,sink){
+
+      final geoScans = scans.where((s) => s.type=='geo').toList();
+      sink.add(geoScans);
+
+    }
+  );
+
+
+  final validateHttp = StreamTransformer<List<ScanModel>,List<ScanModel>>.fromHandlers(
+      handleData: (scans,sink){
+
+        final geoScans = scans.where((s) => s.type=='http').toList();
+        sink.add(geoScans);
+
+      }
+  );
+
+
+
+
+}
