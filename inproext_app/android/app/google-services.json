@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "890019844005",
+    "firebase_url": "https://inproextapp.firebaseio.com",
+    "project_id": "inproextapp",
+    "storage_bucket": "inproextapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:890019844005:android:24d5297d54760518b0a24c",
+        "android_client_info": {
+          "package_name": "com.inproext.inproext_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "890019844005-9s3kddfkj0v0peio6vfl46rbr8jh84ao.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.inproext.inproext_app",
+            "certificate_hash": "69b3615a1d287fe50439f9bb46801e6860ef6b3b"
+          }
+        },
+        {
+          "client_id": "890019844005-msnum6cd9cpr4l00d7lgfipskeof7b9f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALT2la-Cxw488RPxK4aAvhZgZjjTxaD2c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "890019844005-msnum6cd9cpr4l00d7lgfipskeof7b9f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
