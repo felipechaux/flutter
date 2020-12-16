@@ -31,11 +31,14 @@ class HomePage extends StatelessWidget {
       ),
       //ajustar bajo el area barra
       //body: SafeArea(child: Text('Hola mubdo')
-      body: Container(
-        child: Column(
-          //espacio entre elementos
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[_swiperTargets(), _footer(context)],
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Container(
+          child: Column(
+            //espacio entre elementos
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[_swiperTargets(), _footer(context)],
+          ),
         ),
       ),
     );
@@ -65,7 +68,7 @@ class HomePage extends StatelessWidget {
           Container(
               padding: EdgeInsets.only(left: 20.0),
               child: Text('Popular movies',
-                  style: Theme.of(context).textTheme.subtitle1)),
+                  style: Theme.of(context).textTheme.title)),
           SizedBox(height: 5.0),
           //implementacion stream
           StreamBuilder(

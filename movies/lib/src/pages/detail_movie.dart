@@ -71,17 +71,17 @@ class DetailMovie extends StatelessWidget {
             children: <Widget>[
               Text(
                 movie.title,
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context).textTheme.title,
                 overflow: TextOverflow.ellipsis,
               ),
               Text(movie.originalTitle,
-                  style: Theme.of(context).textTheme.subtitle1,
+                  style: Theme.of(context).textTheme.subtitle,
                   overflow: TextOverflow.ellipsis),
               Row(
                 children: <Widget>[
                   Icon(Icons.star_border),
                   Text(movie.voteAverage.toString(),
-                      style: Theme.of(context).textTheme.subtitle1,
+                      style: Theme.of(context).textTheme.subtitle,
                       overflow: TextOverflow.ellipsis)
                 ],
               )
