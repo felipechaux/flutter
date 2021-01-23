@@ -43,6 +43,18 @@
 	<false/>
 	<key>UIStatusBarHidden</key>
 	<true/>
-
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<!-- TODO Replace this value: -->
+				<!-- Copied from GoogleService-Info.plist key REVERSED_CLIENT_ID -->
+				<string>com.googleusercontent.apps.890019844005-khifl4u2bb0elukfhd8r23p1nvqg34o8</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>
