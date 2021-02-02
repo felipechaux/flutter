@@ -1,4 +1,4 @@
-package com.inproext.inproext_app
+package com.inproext.inproextapp
 
 import io.flutter.embedding.android.FlutterActivity
 

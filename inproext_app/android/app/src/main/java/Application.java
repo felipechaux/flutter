@@ -1,4 +1,4 @@
-package com.inproext.inproext_app;
+package com.inproext.inproextapp;
 
 import io.flutter.app.FlutterApplication;
 import io.flutter.plugin.common.PluginRegistry;
