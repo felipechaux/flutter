@@ -12,8 +12,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    final bloc = Provider.of(context);
-
     return Scaffold(
         drawer: MenuWidget(),
         extendBodyBehindAppBar: true,
@@ -47,7 +45,7 @@ class _HomePageState extends State<HomePage> {
       child: Image(
         //ocupar todo el espacio disponible
         fit: BoxFit.cover,
-        image: AssetImage('assets/images/img_home.png'),
+        image: AssetImage('assets/images/img_home.jpg'),
       ),
     );
   }

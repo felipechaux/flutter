@@ -48,20 +48,18 @@ class ListNewsWidget extends StatelessWidget {
                     bottomLeft: Radius.circular(30.0),
                     topLeft: Radius.circular(8.0))),
             child: Container(
-              height: _screenSize.height * 0.21,
+              height: _screenSize.height * 0.25,
             )),
         Row(
           children: <Widget>[
             Container(
               width: 260.0,
-              padding: EdgeInsets.only(left: 25.0),
+              padding: EdgeInsets.only(left: 25.0, right: 5.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  SizedBox(
-                    height: 53,
-                  ),
                   _titleArticle(article),
+                  SizedBox(height: 10.0),
                   _content(context, article),
                 ],
               ),
@@ -92,8 +90,8 @@ class ListNewsWidget extends StatelessWidget {
           alignment: Alignment.centerLeft,
           child: Text(article.title,
               style: TextStyle(
-                  fontFamily: Constants.fontSignikaLight,
-                  color: Constants.colorBlueInproext,
+                  fontFamily: Constants.fontPoppinnsMedium,
+                  color: Constants.colorBlack,
                   fontSize: 18.0))),
     );
   }
@@ -104,7 +102,7 @@ class ListNewsWidget extends StatelessWidget {
         Text(
           article.description,
           style: TextStyle(
-              fontFamily: Constants.fontTitilliumWebLight, color: Colors.black),
+              fontFamily: Constants.fontPoppinnsLight, color: Colors.black),
         ),
         SizedBox(height: 10.0),
         Align(
@@ -115,15 +113,15 @@ class ListNewsWidget extends StatelessWidget {
               },
               child: Row(
                 children: <Widget>[
-                  Image(
-                      width: 15.0,
-                      image: AssetImage('assets/images/ico_show_more.png')),
-                  SizedBox(width: 7.0),
                   Text('Ver más',
                       style: TextStyle(
-                          color: Colors.black,
-                          fontFamily: Constants.fontTitilliumWebLight,
+                          color: Constants.colorRedInproext,
+                          fontFamily: Constants.fontPoppinnsLight,
                           fontSize: 12.0)),
+                  SizedBox(width: 7.0),
+                  Image(
+                      width: 20.0,
+                      image: AssetImage('assets/images/ico_row_red.png')),
                 ],
               ),
             ))

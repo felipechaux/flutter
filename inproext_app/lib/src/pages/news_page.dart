@@ -20,29 +20,30 @@ class _NewsPageState extends State<NewsPage> {
 
     var _pages = [
       WebView(
-        initialUrl: 'https://www.redmine.org/login',
+        initialUrl:
+            'https://drive.google.com/file/d/1sEuWaSsGVdiEhRMYDuomIR-NEHrO8F_5/view?usp=sharing',
         javascriptMode: JavascriptMode.unrestricted,
       ),
       Stack(
         children: <Widget>[
           _backgroundNews(context),
           Container(
-            padding: EdgeInsets.only(top: 85.0),
+            padding: EdgeInsets.only(top: 60.0),
             alignment: Alignment.topCenter,
             child: Column(
               children: <Widget>[
                 Text('Explora los',
                     textAlign: TextAlign.justify,
                     style: (TextStyle(
-                        fontFamily: Constants.fontSignikaRegular,
-                        fontSize: 30,
-                        color: Constants.colorBlueInproext))),
+                        fontFamily: Constants.fontPoppinnsMedium,
+                        fontSize: 22,
+                        color: Constants.colorWhite))),
                 Text('diferentes artículos',
                     textAlign: TextAlign.justify,
                     style: (TextStyle(
-                        fontFamily: Constants.fontSignikaRegular,
-                        fontSize: 30,
-                        color: Constants.colorBlueInproext)))
+                        fontFamily: Constants.fontPoppinnsMedium,
+                        fontSize: 22,
+                        color: Constants.colorWhite)))
               ],
             ),
           ),
@@ -50,13 +51,17 @@ class _NewsPageState extends State<NewsPage> {
         ],
       ),
       WebView(
-        initialUrl:
-            'https://drive.google.com/file/d/1sEuWaSsGVdiEhRMYDuomIR-NEHrO8F_5/view?usp=sharing',
+        initialUrl: 'https://www.redmine.org/login',
         javascriptMode: JavascriptMode.unrestricted,
       ),
       WebView(
         initialUrl:
-            'https://docs.google.com/forms/d/e/1FAIpQLSeP9iK_-i3ehclkKj0lpt1pWTjr91eC6o3ZWLvcCa54vXrZUw/viewform',
+            'https://docs.google.com/forms/d/e/1FAIpQLSfKwzMqkefAisRv9RHwEmTq9W1M1S_vvJqW5G81Sv-XG-JxBg/viewform',
+        javascriptMode: JavascriptMode.unrestricted,
+      ),
+      WebView(
+        initialUrl:
+            'https://docs.google.com/forms/d/e/1FAIpQLSeiWY2D-JqsqetvWvqoX82RZejN46lmeQBjOJY3t5NvSS2oqw/viewform',
         javascriptMode: JavascriptMode.unrestricted,
       ),
     ];
@@ -96,12 +101,12 @@ class _NewsPageState extends State<NewsPage> {
               items: [
                 BottomNavigationBarItem(
                     icon: Image(
-                      width: 25,
-                      image: AssetImage('assets/images/ico_bnb_proyects.png'),
-                    ),
+                        width: 22,
+                        image:
+                            AssetImage('assets/images/ico_bnb_catalogue.png')),
                     title: Container(
-                      padding: EdgeInsets.only(top: 4.0),
-                      child: Text('Proyectos',
+                      padding: EdgeInsets.only(top: 3.0),
+                      child: Text('Catálogo',
                           style: TextStyle(
                               fontFamily: Constants.fontTitilliumWebLight)),
                     )),
@@ -117,12 +122,23 @@ class _NewsPageState extends State<NewsPage> {
                     )),
                 BottomNavigationBarItem(
                     icon: Image(
-                        width: 22,
-                        image:
-                            AssetImage('assets/images/ico_bnb_catalogue.png')),
+                      width: 25,
+                      image: AssetImage('assets/images/ico_bnb_proyects.png'),
+                    ),
                     title: Container(
-                      padding: EdgeInsets.only(top: 3.0),
-                      child: Text('Catálogo',
+                      padding: EdgeInsets.only(top: 4.0),
+                      child: Text('Proyectos',
+                          style: TextStyle(
+                              fontFamily: Constants.fontTitilliumWebLight)),
+                    )),
+                BottomNavigationBarItem(
+                    icon: Image(
+                      width: 30,
+                      image: AssetImage('assets/images/ico_bnb_req.png'),
+                    ),
+                    title: Container(
+                      padding: EdgeInsets.only(top: 4.0),
+                      child: Text('Req',
                           style: TextStyle(
                               fontFamily: Constants.fontTitilliumWebLight)),
                     )),
@@ -148,13 +164,12 @@ class _NewsPageState extends State<NewsPage> {
                 backgroundColor: Colors.transparent,
                 elevation: 0.0,
                 titleSpacing: 5,
-                title: Padding(
-                  padding: EdgeInsets.only(bottom: 4.0),
-                  child: Text('Artículos',
-                      style: TextStyle(
-                          fontFamily: Constants.fontTitilliumWebLight,
-                          fontSize: 25.0)),
-                ),
+                title: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text('Artículos',
+                        style: TextStyle(
+                            fontFamily: Constants.fontPoppinnsLight,
+                            fontSize: 16.0))),
                 leading: Builder(builder: (BuildContext context) {
                   return IconButton(
                     icon: Image.asset(
@@ -177,7 +192,7 @@ class _NewsPageState extends State<NewsPage> {
       child: Image(
         //ocupar todo el espacio disponible
         fit: BoxFit.cover,
-        image: AssetImage('assets/images/img_news.png'),
+        image: AssetImage('assets/images/img_new.jpg'),
       ),
     );
   }

@@ -12,7 +12,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final userProvider = new UserProvider();
   bool _passwordVisible = false;
-  var passIcon = Image(image: AssetImage('assets/images/ico_show.png'));
+  var passIcon = Image(image: AssetImage('assets/images/ico_not_show_eye.png'));
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                   hintText: 'Email',
                   hintStyle: TextStyle(
                       color: Colors.white,
-                      fontFamily: Constants.fontTitilliumWebLight),
+                      fontFamily: Constants.fontPoppinnsRegular),
                   fillColor: Constants.colorBlueInproext,
                   filled: true,
                   errorStyle: TextStyle(color: Colors.grey),
@@ -120,7 +120,7 @@ class _LoginPageState extends State<LoginPage> {
                     hintText: 'Contraseña',
                     hintStyle: TextStyle(
                         color: Colors.white,
-                        fontFamily: Constants.fontTitilliumWebLight),
+                        fontFamily: Constants.fontPoppinnsRegular),
                     fillColor: Constants.colorBlueInproext,
                     filled: true,
                     errorStyle: TextStyle(color: Colors.grey),
@@ -131,6 +131,8 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _createButtonGoogle(LoginBloc bloc, bool isLogin) {
+    final _screenSize = MediaQuery.of(context).size;
+
     return RaisedButton(
       shape: OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(10.0)),
@@ -148,13 +150,12 @@ class _LoginPageState extends State<LoginPage> {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Container(
-                padding: EdgeInsets.only(left: 10.0, right: 10.0),
+                //padding: EdgeInsets.symmetric(horizontal: 0),
                 child: new Text(
-                  "Acceder",
-                  style: TextStyle(
-                      fontFamily: Constants.fontTitilliumWebLight,
-                      fontSize: 20.0),
-                )),
+              "Acceder con google",
+              style: TextStyle(
+                  fontFamily: Constants.fontPoppinnsRegular, fontSize: 14.0),
+            )),
             Container(
               padding: EdgeInsets.all(8.0),
               decoration: BoxDecoration(
@@ -179,7 +180,10 @@ class _LoginPageState extends State<LoginPage> {
         builder: (context, snapshot) {
           return RaisedButton(
             //borde
-            shape: StadiumBorder(),
+            shape: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+              borderSide: BorderSide.none,
+            ),
             color: Constants.colorRedInproext,
             textColor: Colors.white,
             onPressed: snapshot.hasData ? () => _login(bloc, context) : null,
@@ -187,11 +191,11 @@ class _LoginPageState extends State<LoginPage> {
             disabledTextColor: Colors.white,
             child: Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: _screenSize.width * 0.11, vertical: 10.0),
+                    horizontal: _screenSize.width * 0.12, vertical: 10.0),
                 child: Text('Ingresar',
                     style: TextStyle(
-                        fontSize: 20.0,
-                        fontFamily: Constants.fontTitilliumWebLight))),
+                        fontSize: 16.0,
+                        fontFamily: Constants.fontPoppinnsRegular))),
           );
         });
   }
@@ -204,7 +208,10 @@ class _LoginPageState extends State<LoginPage> {
         builder: (context, snapshot) {
           return RaisedButton(
             //borde
-            shape: StadiumBorder(),
+            shape: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+              borderSide: BorderSide.none,
+            ),
             color: Constants.colorRedInproext,
             textColor: Colors.white,
             onPressed: snapshot.hasData ? () => _register(bloc, context) : null,
@@ -212,11 +219,11 @@ class _LoginPageState extends State<LoginPage> {
             disabledTextColor: Colors.white,
             child: Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: _screenSize.width * 0.08, vertical: 10.0),
+                    horizontal: _screenSize.width * 0.09, vertical: 10.0),
                 child: Text('Registrarse',
                     style: TextStyle(
-                        fontSize: 20.0,
-                        fontFamily: Constants.fontTitilliumWebLight))),
+                        fontSize: 16.0,
+                        fontFamily: Constants.fontPoppinnsRegular))),
           );
         });
   }
@@ -253,8 +260,8 @@ class _LoginPageState extends State<LoginPage> {
       padding: EdgeInsets.only(top: 125.0),
       margin: EdgeInsets.symmetric(horizontal: 40.0),
       child: TabBar(
-        labelStyle:
-            TextStyle(fontFamily: Constants.fontSignikaRegular, fontSize: 30.0),
+        labelStyle: TextStyle(
+            fontFamily: Constants.fontPoppinnsRegular, fontSize: 25.0),
         indicatorWeight: 2.0,
         indicatorColor: Constants.colorBlueInproext,
         unselectedLabelColor: Constants.colorBlueInproext,
@@ -279,15 +286,11 @@ class _LoginPageState extends State<LoginPage> {
         children: <Widget>[
           SizedBox(height: size.height * 0.38),
           _createEmail(bloc),
-          SizedBox(height: 30.0),
+          SizedBox(height: 10.0),
           _createPassword(bloc),
           SizedBox(height: 30.0),
           _createButtonSign(bloc),
-          SizedBox(height: 35.0),
-          Text('O ingresa con google',
-              style: TextStyle(
-                  fontFamily: Constants.fontTitilliumWebLight, fontSize: 15.0)),
-          SizedBox(height: 25.0),
+          SizedBox(height: 14.0),
           _createButtonGoogle(bloc, true),
           SizedBox(height: 25.0),
         ],
@@ -302,15 +305,11 @@ class _LoginPageState extends State<LoginPage> {
         children: <Widget>[
           SizedBox(height: size.height * 0.38),
           _createEmail(bloc),
-          SizedBox(height: 30.0),
+          SizedBox(height: 10.0),
           _createPassword(bloc),
           SizedBox(height: 30.0),
           _createButtonRegister(bloc),
-          SizedBox(height: 35.0),
-          Text('O registrate con google',
-              style: TextStyle(
-                  fontFamily: Constants.fontTitilliumWebLight, fontSize: 15.0)),
-          SizedBox(height: 25.0),
+          SizedBox(height: 14.0),
           _createButtonGoogle(bloc, false),
           SizedBox(height: 25.0),
         ],
@@ -322,11 +321,11 @@ class _LoginPageState extends State<LoginPage> {
     if (_passwordVisible) {
       passIcon = Image(
           colorBlendMode: BlendMode.colorDodge,
-          image: AssetImage('assets/images/ico_show.png'));
+          image: AssetImage('assets/images/ico_not_show_eye.png'));
 
       _passwordVisible = false;
     } else {
-      passIcon = Image(image: AssetImage('assets/images/ico_show.png'));
+      passIcon = Image(image: AssetImage('assets/images/ico_show_eye.png'));
 
       _passwordVisible = true;
     }

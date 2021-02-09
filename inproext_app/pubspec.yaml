@@ -101,6 +101,20 @@ flutter:
       fonts:
        - asset: assets/fonts/TitilliumWeb/TitilliumWeb-SemiBold.ttf
 
+    - family: PoppinsRegular
+      fonts:
+       - asset: assets/fonts/Poppins/Poppins-Regular.otf
+
+    - family: PoppinsMedium
+      fonts:
+       - asset: assets/fonts/Poppins/Poppins-Medium.otf
+
+    - family: PoppinsLight
+      fonts:
+       - asset: assets/fonts/Poppins/Poppins-Light.otf
+
+
+
 
        
   #

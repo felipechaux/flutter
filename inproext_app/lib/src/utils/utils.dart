@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:inproext_app/src/bloc/article_bloc.dart';
-import 'package:inproext_app/src/models/article_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 bool isNumeric(String s) {

@@ -26,18 +26,18 @@ class MenuWidget extends StatelessWidget {
                   child: Icon(
                     Icons.close,
                     color: Constants.colorRedInproext,
-                    size: 40.0,
+                    size: 60.0,
                   ),
                 ),
               ),
-              SizedBox(height: 8.0),
+              SizedBox(height: 70.0),
               GestureDetector(
                 onTap: () => Navigator.pushNamed(context, 'home'),
                 child: Text(
                   'Inicio',
                   style: (TextStyle(
-                      color: Constants.colorBlueInproext,
-                      fontFamily: Constants.fontTitilliumWebSemiBold,
+                      color: Constants.colorBlack,
+                      fontFamily: Constants.fontPoppinnsMedium,
                       fontSize: 20.0)),
                 ),
               ),
@@ -45,16 +45,16 @@ class MenuWidget extends StatelessWidget {
               Text(bloc.userName,
                   textAlign: TextAlign.start,
                   style: (TextStyle(
-                      color: Constants.colorBlueInproext,
-                      fontFamily: Constants.fontTitilliumWebLight,
+                      color: Constants.colorBlack,
+                      fontFamily: Constants.fontPoppinnsLight,
                       fontSize: 20.0))),
               //  _notifications(),
               GestureDetector(
                 onTap: () => userProvider.logoutGoogle(context),
                 child: Text('Cerrar sesión',
                     style: (TextStyle(
-                        color: Constants.colorBlueInproext,
-                        fontFamily: Constants.fontTitilliumWebSemiBold,
+                        color: Constants.colorBlack,
+                        fontFamily: Constants.fontPoppinnsMedium,
                         fontSize: 20.0))),
               ),
             ],

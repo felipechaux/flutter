@@ -59,7 +59,7 @@ class _MyAppState extends State<MyApp> {
         navigateAfterSeconds: LoginPage(),
         backgroundColor: Colors.white,
         styleTextUnderTheLoader: new TextStyle(),
-        imageBackground: AssetImage('assets/images/splash.png'),
+        imageBackground: AssetImage('assets/images/splash_inproext.jpg'),
         onClick: () => print("Flutter Egypt"),
         loaderColor: Constants.colorBlueInproext);
   }
