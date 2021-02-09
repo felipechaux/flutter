@@ -59,11 +59,11 @@ class _HomePageState extends State<HomePage> {
           SizedBox(height: 120.0),
           _proyectsCard(),
           SizedBox(height: 30.0),
-          _newsCard(context),
-          SizedBox(height: 30.0),
           _catalogueCard(),
           SizedBox(height: 30.0),
           _quotationCard(),
+          SizedBox(height: 30.0),
+          _newsCard(context),
           SizedBox(height: 30.0),
         ],
       ),
@@ -87,8 +87,8 @@ Widget _proyectsCard() {
               height: 100,
               child: Text('Mis Proyectos',
                   style: TextStyle(
-                      fontFamily: Constants.fontCaviarDreamsBold,
-                      fontSize: 23.0)),
+                      fontFamily: Constants.fontPoppinnsMedium,
+                      fontSize: 20.0)),
             )),
       ),
       Card(
@@ -106,19 +106,6 @@ Widget _proyectsCard() {
               ),
             ),
           )),
-      Card(
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-        margin: EdgeInsets.only(left: 310.0, top: 30.0),
-        child: Container(
-          alignment: Alignment.center,
-          height: 45.0,
-          width: 45.0,
-          child: Image.asset(
-            'assets/images/row_red.png',
-          ),
-        ),
-      ),
     ],
   );
 }
@@ -139,8 +126,8 @@ Widget _newsCard(BuildContext context) {
               height: 100,
               child: Text('Artículos',
                   style: TextStyle(
-                      fontFamily: Constants.fontCaviarDreamsBold,
-                      fontSize: 23.0)),
+                      fontFamily: Constants.fontPoppinnsMedium,
+                      fontSize: 20.0)),
             )),
       ),
       Card(
@@ -158,19 +145,6 @@ Widget _newsCard(BuildContext context) {
               ),
             ),
           )),
-      Card(
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-        margin: EdgeInsets.only(left: 310.0, top: 30.0),
-        child: Container(
-          alignment: Alignment.center,
-          height: 45.0,
-          width: 45.0,
-          child: Image.asset(
-            'assets/images/row_red.png',
-          ),
-        ),
-      ),
     ],
   );
 }
@@ -192,8 +166,8 @@ Widget _catalogueCard() {
               height: 100,
               child: Text('Catálogo',
                   style: TextStyle(
-                      fontFamily: Constants.fontCaviarDreamsBold,
-                      fontSize: 23.0)),
+                      fontFamily: Constants.fontPoppinnsMedium,
+                      fontSize: 20.0)),
             )),
       ),
       Card(
@@ -211,19 +185,6 @@ Widget _catalogueCard() {
               ),
             ),
           )),
-      Card(
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-        margin: EdgeInsets.only(left: 310.0, top: 30.0),
-        child: Container(
-          alignment: Alignment.center,
-          height: 45.0,
-          width: 45.0,
-          child: Image.asset(
-            'assets/images/row_red.png',
-          ),
-        ),
-      ),
     ],
   );
 }
@@ -245,8 +206,8 @@ Widget _quotationCard() {
               height: 100,
               child: Text('Cotización',
                   style: TextStyle(
-                      fontFamily: Constants.fontCaviarDreamsBold,
-                      fontSize: 23.0)),
+                      fontFamily: Constants.fontPoppinnsMedium,
+                      fontSize: 20.0)),
             )),
       ),
       Card(
@@ -264,19 +225,6 @@ Widget _quotationCard() {
               ),
             ),
           )),
-      Card(
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-        margin: EdgeInsets.only(left: 310.0, top: 30.0),
-        child: Container(
-          alignment: Alignment.center,
-          height: 45.0,
-          width: 45.0,
-          child: Image.asset(
-            'assets/images/row_red.png',
-          ),
-        ),
-      ),
     ],
   );
 }
