@@ -263,6 +263,7 @@ class _LoginPageState extends State<LoginPage> {
         labelStyle: TextStyle(
             fontFamily: Constants.fontPoppinnsRegular, fontSize: 25.0),
         indicatorWeight: 2.0,
+        indicatorSize: TabBarIndicatorSize.tab,
         indicatorColor: Constants.colorBlueInproext,
         unselectedLabelColor: Constants.colorBlueInproext,
         indicatorPadding: EdgeInsets.symmetric(horizontal: 20.0),

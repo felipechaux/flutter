@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:inproext_app/src/bloc/provider.dart';
 import 'package:inproext_app/src/utils/constants.dart';
 import 'package:inproext_app/src/utils/utils.dart';
 import 'package:inproext_app/src/widgets/menu_widget.dart';
@@ -59,6 +58,8 @@ class _HomePageState extends State<HomePage> {
           SizedBox(height: 120.0),
           _proyectsCard(),
           SizedBox(height: 30.0),
+          _requestCard(),
+          SizedBox(height: 30.0),
           _catalogueCard(),
           SizedBox(height: 30.0),
           _quotationCard(),
@@ -75,7 +76,7 @@ Widget _proyectsCard() {
   return Stack(
     children: <Widget>[
       GestureDetector(
-        onTap: () => launchUrl('https://www.redmine.org/login'),
+        onTap: () => launchUrl(Constants.urlProjects),
         child: Card(
             elevation: 3.0,
             margin: EdgeInsets.only(left: 35.0),
@@ -149,12 +150,50 @@ Widget _newsCard(BuildContext context) {
   );
 }
 
+Widget _requestCard() {
+  return Stack(
+    children: <Widget>[
+      GestureDetector(
+        onTap: () => launchUrl(Constants.urlRequest),
+        child: Card(
+            margin: EdgeInsets.only(left: 35.0),
+            elevation: 3.0,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+            child: Container(
+              alignment: Alignment.center,
+              width: 300,
+              height: 100,
+              child: Text('Petición',
+                  style: TextStyle(
+                      fontFamily: Constants.fontPoppinnsMedium,
+                      fontSize: 20.0)),
+            )),
+      ),
+      Card(
+          elevation: 3.0,
+          margin: EdgeInsets.only(left: 2.0, top: 20.0),
+          child: Container(
+            height: 60.0,
+            width: 60.0,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image(
+                image: AssetImage('assets/images/ico_request.png'),
+                height: 12,
+                width: 12,
+              ),
+            ),
+          )),
+    ],
+  );
+}
+
 Widget _catalogueCard() {
   return Stack(
     children: <Widget>[
       GestureDetector(
-        onTap: () => launchUrl(
-            'https://drive.google.com/file/d/1sEuWaSsGVdiEhRMYDuomIR-NEHrO8F_5/view?usp=sharing'),
+        onTap: () => launchUrl(Constants.urlCatalogue),
         child: Card(
             margin: EdgeInsets.only(left: 35.0),
             elevation: 3.0,
@@ -193,8 +232,7 @@ Widget _quotationCard() {
   return Stack(
     children: <Widget>[
       GestureDetector(
-        onTap: () => launchUrl(
-            'https://docs.google.com/forms/d/e/1FAIpQLSeP9iK_-i3ehclkKj0lpt1pWTjr91eC6o3ZWLvcCa54vXrZUw/viewform'),
+        onTap: () => launchUrl(Constants.urlQuotation),
         child: Card(
             margin: EdgeInsets.only(left: 35.0),
             shape:

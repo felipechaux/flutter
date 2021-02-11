@@ -20,8 +20,7 @@ class _NewDetailState extends State<NewDetail> {
 
     var _pages = [
       WebView(
-        initialUrl:
-            'https://drive.google.com/file/d/1sEuWaSsGVdiEhRMYDuomIR-NEHrO8F_5/view?usp=sharing',
+        initialUrl: Constants.urlCatalogue,
         javascriptMode: JavascriptMode.unrestricted,
       ),
       Stack(
@@ -29,21 +28,20 @@ class _NewDetailState extends State<NewDetail> {
         children: <Widget>[
           _backgroundImage(context, article),
           _cardContent(context, article),
-          _closeButton(context)
+          _closeButton(context),
+          _articleBotton(article)
         ],
       ),
       WebView(
-        initialUrl: 'https://www.redmine.org/login',
+        initialUrl: Constants.urlProjects,
         javascriptMode: JavascriptMode.unrestricted,
       ),
       WebView(
-        initialUrl:
-            'https://docs.google.com/forms/d/e/1FAIpQLSfKwzMqkefAisRv9RHwEmTq9W1M1S_vvJqW5G81Sv-XG-JxBg/viewform',
+        initialUrl: Constants.urlRequest,
         javascriptMode: JavascriptMode.unrestricted,
       ),
       WebView(
-        initialUrl:
-            'https://docs.google.com/forms/d/e/1FAIpQLSeiWY2D-JqsqetvWvqoX82RZejN46lmeQBjOJY3t5NvSS2oqw/viewform',
+        initialUrl: Constants.urlQuotation,
         javascriptMode: JavascriptMode.unrestricted,
       ),
     ];
@@ -117,12 +115,12 @@ class _NewDetailState extends State<NewDetail> {
                     )),
                 BottomNavigationBarItem(
                     icon: Image(
-                      width: 30,
+                      width: 35,
                       image: AssetImage('assets/images/ico_bnb_req.png'),
                     ),
                     title: Container(
                       padding: EdgeInsets.only(top: 4.0),
-                      child: Text('Req',
+                      child: Text('Petición',
                           style: TextStyle(
                               fontFamily: Constants.fontTitilliumWebLight)),
                     )),
@@ -135,7 +133,7 @@ class _NewDetailState extends State<NewDetail> {
                               'assets/images/ico_bnb_quotation.png')),
                     ),
                     title: Container(
-                      padding: EdgeInsets.only(top: 3.0),
+                      padding: EdgeInsets.only(top: 2.0),
                       child: Text('Cotización',
                           style: TextStyle(
                               fontFamily: Constants.fontTitilliumWebLight)),
@@ -214,7 +212,6 @@ class _NewDetailState extends State<NewDetail> {
                             color: Colors.white),
                       ),
                       SizedBox(height: 23.0),
-                      _articleBotton(article)
                     ],
                   ),
                 ),
@@ -244,7 +241,6 @@ class _NewDetailState extends State<NewDetail> {
                               color: Colors.white),
                         ),
                         SizedBox(height: 23.0),
-                        _articleBotton(article)
                       ],
                     ),
                   ),
@@ -266,29 +262,12 @@ class _NewDetailState extends State<NewDetail> {
         ));
   }
 
-  Widget _closeButton(BuildContext context) {
+  Widget _articleBotton(ArticleModel article) {
     return Positioned(
-      bottom: 25,
+      bottom: 80,
+      left: 50,
       width: 120.0,
       height: 45.0,
-      child: FlatButton(
-        color: Constants.colorRedInproext,
-        onPressed: () {
-          Navigator.pushNamed(context, 'news');
-        },
-        child: Text(
-          'Cerrar',
-          style: TextStyle(
-              fontFamily: Constants.fontTitilliumWebLight, color: Colors.white),
-        ),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      ),
-    );
-  }
-
-  Widget _articleBotton(ArticleModel article) {
-    return Align(
-      alignment: Alignment.centerLeft,
       child: FlatButton(
         color: Colors.white,
         onPressed: () {
@@ -299,6 +278,27 @@ class _NewDetailState extends State<NewDetail> {
           'Ir al artículo',
           style: TextStyle(
               fontFamily: Constants.fontTitilliumWebLight, color: Colors.black),
+        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
+      ),
+    );
+  }
+
+  Widget _closeButton(BuildContext context) {
+    return Positioned(
+      bottom: 80.0,
+      width: 120.0,
+      right: 50.0,
+      height: 45.0,
+      child: FlatButton(
+        color: Constants.colorRedInproext,
+        onPressed: () {
+          Navigator.pushNamed(context, 'news');
+        },
+        child: Text(
+          'Cerrar',
+          style: TextStyle(
+              fontFamily: Constants.fontTitilliumWebLight, color: Colors.white),
         ),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
       ),

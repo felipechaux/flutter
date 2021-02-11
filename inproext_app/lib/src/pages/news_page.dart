@@ -20,8 +20,7 @@ class _NewsPageState extends State<NewsPage> {
 
     var _pages = [
       WebView(
-        initialUrl:
-            'https://drive.google.com/file/d/1sEuWaSsGVdiEhRMYDuomIR-NEHrO8F_5/view?usp=sharing',
+        initialUrl: Constants.urlCatalogue,
         javascriptMode: JavascriptMode.unrestricted,
       ),
       Stack(
@@ -51,17 +50,15 @@ class _NewsPageState extends State<NewsPage> {
         ],
       ),
       WebView(
-        initialUrl: 'https://www.redmine.org/login',
+        initialUrl: Constants.urlProjects,
         javascriptMode: JavascriptMode.unrestricted,
       ),
       WebView(
-        initialUrl:
-            'https://docs.google.com/forms/d/e/1FAIpQLSfKwzMqkefAisRv9RHwEmTq9W1M1S_vvJqW5G81Sv-XG-JxBg/viewform',
+        initialUrl: Constants.urlRequest,
         javascriptMode: JavascriptMode.unrestricted,
       ),
       WebView(
-        initialUrl:
-            'https://docs.google.com/forms/d/e/1FAIpQLSeiWY2D-JqsqetvWvqoX82RZejN46lmeQBjOJY3t5NvSS2oqw/viewform',
+        initialUrl: Constants.urlQuotation,
         javascriptMode: JavascriptMode.unrestricted,
       ),
     ];
@@ -133,12 +130,12 @@ class _NewsPageState extends State<NewsPage> {
                     )),
                 BottomNavigationBarItem(
                     icon: Image(
-                      width: 30,
+                      width: 35,
                       image: AssetImage('assets/images/ico_bnb_req.png'),
                     ),
                     title: Container(
                       padding: EdgeInsets.only(top: 4.0),
-                      child: Text('Req',
+                      child: Text('Petición',
                           style: TextStyle(
                               fontFamily: Constants.fontTitilliumWebLight)),
                     )),
@@ -151,7 +148,7 @@ class _NewsPageState extends State<NewsPage> {
                               'assets/images/ico_bnb_quotation.png')),
                     ),
                     title: Container(
-                      padding: EdgeInsets.only(top: 3.0),
+                      padding: EdgeInsets.only(top: 2.0),
                       child: Text('Cotización',
                           style: TextStyle(
                               fontFamily: Constants.fontTitilliumWebLight)),
