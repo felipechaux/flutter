@@ -131,8 +131,6 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _createButtonGoogle(LoginBloc bloc, bool isLogin) {
-    final _screenSize = MediaQuery.of(context).size;
-
     return RaisedButton(
       shape: OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(10.0)),

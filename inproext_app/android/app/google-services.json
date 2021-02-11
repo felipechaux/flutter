@@ -8,18 +8,18 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:890019844005:android:24d5297d54760518b0a24c",
+        "mobilesdk_app_id": "1:890019844005:android:7080a3e836ee3e4bb0a24c",
         "android_client_info": {
           "package_name": "com.inproext.inproextapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "890019844005-9s3kddfkj0v0peio6vfl46rbr8jh84ao.apps.googleusercontent.com",
+          "client_id": "890019844005-7sdd6d8etrvjqe1453df0abcuj753elf.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.inproext.inproextapp",
-            "certificate_hash": "69b3615a1d287fe50439f9bb46801e6860ef6b3b"
+            "certificate_hash": "f2ce4460aaab1ca684eb31548af67afb938b79f2"
           }
         },
         {
@@ -38,6 +38,13 @@
             {
               "client_id": "890019844005-msnum6cd9cpr4l00d7lgfipskeof7b9f.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "890019844005-khifl4u2bb0elukfhd8r23p1nvqg34o8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.inproextApp"
+              }
             }
           ]
         }
