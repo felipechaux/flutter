@@ -21,7 +21,7 @@ class Constants {
   static const fontPoppinnsLight = 'PoppinsLight';
 
   //urls
-  static const urlProjects = 'https://www.redmine.org/login';
+  static const urlProjects = 'http://34.106.252.173';
   static const urlCatalogue =
       'https://drive.google.com/file/d/1sEuWaSsGVdiEhRMYDuomIR-NEHrO8F_5/view?usp=sharing';
   static const urlRequest =
