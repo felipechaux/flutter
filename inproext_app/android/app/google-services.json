@@ -15,11 +15,19 @@
       },
       "oauth_client": [
         {
-          "client_id": "890019844005-7sdd6d8etrvjqe1453df0abcuj753elf.apps.googleusercontent.com",
+          "client_id": "890019844005-khfmnvl9in820jbltj2t2fcqune47pqj.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.inproext.inproextapp",
-            "certificate_hash": "f2ce4460aaab1ca684eb31548af67afb938b79f2"
+            "certificate_hash": "d01288f0231d1b4d50062ec2e854fd29727b6123"
+          }
+        },
+        {
+          "client_id": "890019844005-q1qgob6rgfae3ngto8g5m7np5g4ijm26.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.inproext.inproextapp",
+            "certificate_hash": "3582ef4984fc980570bdf740fb58bdddf9b3408b"
           }
         },
         {

@@ -7,6 +7,7 @@ import 'package:inproext_app/src/bloc/login_bloc.dart';
 import 'package:inproext_app/src/preferences/user_preferences.dart';
 import 'package:inproext_app/src/utils/utils.dart';
 import 'package:inproext_app/src/widgets/dialog_password_widget.dart';
+import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 class UserProvider {
   final String _firebaseToken = 'AIzaSyBLfRq3wd3URrz-SE27X7dkU7gUFAPQHhQ';
@@ -98,6 +99,20 @@ class UserProvider {
         } else {
           showPasswordAlert(context, bloc, account);
         }
+      }
+    } catch (err) {
+      print(err);
+    }
+  }
+
+  loginApple(BuildContext context, AuthorizationCredentialAppleID credential,
+      LoginBloc bloc) async {
+    try {
+      if (credential != null) {
+        print(credential);
+        _prefs.token = credential.authorizationCode;
+        bloc.userName = "${credential.givenName} ${credential.familyName}";
+        Navigator.pushReplacementNamed(context, 'home');
       }
     } catch (err) {
       print(err);

@@ -21,11 +21,9 @@ class Constants {
   static const fontPoppinnsLight = 'PoppinsLight';
 
   //urls
-  static const urlProjects = 'http://34.106.252.173';
+  static const urlProjects = 'http://34.106.252.173/login';
   static const urlCatalogue =
       'https://drive.google.com/file/d/1sEuWaSsGVdiEhRMYDuomIR-NEHrO8F_5/view?usp=sharing';
-  static const urlRequest =
-      'https://docs.google.com/forms/d/e/1FAIpQLSfKwzMqkefAisRv9RHwEmTq9W1M1S_vvJqW5G81Sv-XG-JxBg/viewform';
-  static const urlQuotation =
-      'https://docs.google.com/forms/d/e/1FAIpQLSeiWY2D-JqsqetvWvqoX82RZejN46lmeQBjOJY3t5NvSS2oqw/viewform';
+  static const urlRequest = 'https://forms.gle/anG5y5q7i1tfwagw9';
+  static const urlQuotation = 'https://forms.gle/tV9MfP9WyuJzSmNY7';
 }

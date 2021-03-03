@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:inproext_app/src/bloc/provider.dart';
 import 'package:inproext_app/src/providers/user_provider.dart';
 import 'package:inproext_app/src/utils/constants.dart';
 import 'package:inproext_app/src/utils/utils.dart';
+import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -170,6 +173,50 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  Widget _createButtonApple(LoginBloc bloc) {
+    return RaisedButton(
+      color: Colors.black,
+      shape: OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+        borderSide: BorderSide.none,
+      ),
+      onPressed: () async {
+        final credential = await SignInWithApple.getAppleIDCredential(
+          scopes: [
+            AppleIDAuthorizationScopes.email,
+            AppleIDAuthorizationScopes.fullName,
+          ],
+        );
+        userProvider.loginApple(context, credential, bloc);
+      },
+      child: Container(
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Container(
+                child: new Text(
+              "Acceder con Apple",
+              style: TextStyle(
+                  fontFamily: Constants.fontPoppinnsRegular,
+                  fontSize: 14.0,
+                  color: Colors.white),
+            )),
+            Container(
+              padding: EdgeInsets.all(8.0),
+              decoration: BoxDecoration(
+                color: Colors.transparent,
+              ),
+              child: Image.asset(
+                'assets/images/ico_apple.png',
+                height: 18.0,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget _createButtonSign(LoginBloc bloc) {
     final _screenSize = MediaQuery.of(context).size;
 
@@ -291,6 +338,8 @@ class _LoginPageState extends State<LoginPage> {
           _createButtonSign(bloc),
           SizedBox(height: 14.0),
           _createButtonGoogle(bloc, true),
+          SizedBox(height: 14.0),
+          (Platform.isIOS) ? _createButtonApple(bloc) : Container(),
           SizedBox(height: 25.0),
         ],
       ),

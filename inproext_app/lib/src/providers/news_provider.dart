@@ -10,7 +10,7 @@ class NewsProvider {
 
   Future<List<ArticleModel>> getInproextNews() async {
     print('loadNews');
-    final url = '$_url/articles.json?auth=${_prefs.token}';
+    final url = '$_url/articles.json';
 
     final resp = await http.get(url);
 
