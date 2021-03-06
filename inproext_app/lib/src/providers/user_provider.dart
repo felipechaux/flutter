@@ -61,17 +61,16 @@ class UserProvider {
     }
   }
 
-  registerGoogle(
-      BuildContext context, GoogleSignInAccount user, LoginBloc bloc) async {
+  registerGoogle(BuildContext context, String email, LoginBloc bloc) async {
     print('________________');
-    print('Email: ${user.email}');
+    print('Email: $email');
     print('Password: ${bloc.password}');
     print('________________');
 
-    final info = await newUser(user.email, bloc.password);
+    final info = await newUser(email, bloc.password);
 
     if (info['ok']) {
-      bloc.userName = user.displayName;
+      bloc.userName = email;
       Navigator.pushReplacementNamed(context, 'home');
     } else {
       await logoutGoogle(context);
@@ -97,7 +96,7 @@ class UserProvider {
           bloc.userName = _googleSignIn.currentUser.displayName;
           Navigator.pushReplacementNamed(context, 'home');
         } else {
-          showPasswordAlert(context, bloc, account);
+          showPasswordAlert(context, bloc, account.email);
         }
       }
     } catch (err) {
@@ -106,13 +105,25 @@ class UserProvider {
   }
 
   loginApple(BuildContext context, AuthorizationCredentialAppleID credential,
-      LoginBloc bloc) async {
+      LoginBloc bloc, bool isLogin) async {
     try {
+      String email = "";
       if (credential != null) {
-        print(credential);
-        _prefs.token = credential.authorizationCode;
-        bloc.userName = "${credential.givenName} ${credential.familyName}";
-        Navigator.pushReplacementNamed(context, 'home');
+        if (isLogin) {
+          print(credential);
+          _prefs.token = credential.authorizationCode;
+          bloc.userName = "${credential.givenName} ${credential.familyName}";
+          Navigator.pushReplacementNamed(context, 'home');
+        } else {
+          if (credential.email != null) {
+            email = credential.email;
+          } else {
+            email = credential.givenName.toString().replaceAll(" ", "") +
+                "@gmail.com";
+          }
+          print(email);
+          showPasswordAlert(context, bloc, email);
+        }
       }
     } catch (err) {
       print(err);

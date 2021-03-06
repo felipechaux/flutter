@@ -151,14 +151,7 @@ class _LoginPageState extends State<LoginPage> {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Container(
-                //padding: EdgeInsets.symmetric(horizontal: 0),
-                child: new Text(
-              "Acceder con google",
-              style: TextStyle(
-                  fontFamily: Constants.fontPoppinnsRegular, fontSize: 14.0),
-            )),
-            Container(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(2.0),
               decoration: BoxDecoration(
                 color: Colors.transparent,
               ),
@@ -167,13 +160,21 @@ class _LoginPageState extends State<LoginPage> {
                 height: 18.0,
               ),
             ),
+            SizedBox(width: 20.0),
+            Container(
+                //padding: EdgeInsets.symmetric(horizontal: 0),
+                child: new Text(
+              "Continuar con google",
+              style: TextStyle(
+                  fontFamily: Constants.fontPoppinnsRegular, fontSize: 14.0),
+            )),
           ],
         ),
       ),
     );
   }
 
-  Widget _createButtonApple(LoginBloc bloc) {
+  Widget _createButtonApple(LoginBloc bloc, bool isLogin) {
     return RaisedButton(
       color: Colors.black,
       shape: OutlineInputBorder(
@@ -187,22 +188,18 @@ class _LoginPageState extends State<LoginPage> {
             AppleIDAuthorizationScopes.fullName,
           ],
         );
-        userProvider.loginApple(context, credential, bloc);
+        if (isLogin) {
+          userProvider.loginApple(context, credential, bloc, true);
+        } else {
+          userProvider.loginApple(context, credential, bloc, false);
+        }
       },
       child: Container(
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Container(
-                child: new Text(
-              "Acceder con Apple",
-              style: TextStyle(
-                  fontFamily: Constants.fontPoppinnsRegular,
-                  fontSize: 14.0,
-                  color: Colors.white),
-            )),
-            Container(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(7.0),
               decoration: BoxDecoration(
                 color: Colors.transparent,
               ),
@@ -211,6 +208,15 @@ class _LoginPageState extends State<LoginPage> {
                 height: 18.0,
               ),
             ),
+            SizedBox(width: 20.0),
+            Container(
+                child: new Text(
+              "Continuar con Apple",
+              style: TextStyle(
+                  fontFamily: Constants.fontPoppinnsRegular,
+                  fontSize: 14.0,
+                  color: Colors.white),
+            )),
           ],
         ),
       ),
@@ -339,7 +345,7 @@ class _LoginPageState extends State<LoginPage> {
           SizedBox(height: 14.0),
           _createButtonGoogle(bloc, true),
           SizedBox(height: 14.0),
-          (Platform.isIOS) ? _createButtonApple(bloc) : Container(),
+          (Platform.isIOS) ? _createButtonApple(bloc, true) : Container(),
           SizedBox(height: 25.0),
         ],
       ),
@@ -359,6 +365,8 @@ class _LoginPageState extends State<LoginPage> {
           _createButtonRegister(bloc),
           SizedBox(height: 14.0),
           _createButtonGoogle(bloc, false),
+          SizedBox(height: 14.0),
+          (Platform.isIOS) ? _createButtonApple(bloc, false) : Container(),
           SizedBox(height: 25.0),
         ],
       ),

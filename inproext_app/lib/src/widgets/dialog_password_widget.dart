@@ -8,8 +8,7 @@ final userProvider = new UserProvider();
 var passIcon = Image(image: AssetImage('assets/images/ico_show.png'));
 bool _passwordVisible = false;
 
-void showPasswordAlert(
-    BuildContext context, LoginBloc bloc, GoogleSignInAccount user) {
+void showPasswordAlert(BuildContext context, LoginBloc bloc, String user) {
   showDialog(
       context: context,
       builder: (context) {
@@ -81,7 +80,7 @@ Widget _createPasswordRegisterGoogle(LoginBloc bloc) {
       });
 }
 
-Widget _createButtonRegisterGoogle(LoginBloc bloc, GoogleSignInAccount user) {
+Widget _createButtonRegisterGoogle(LoginBloc bloc, String user) {
   return StreamBuilder<Object>(
     stream: bloc.passwordValidStream,
     builder: (BuildContext context, AsyncSnapshot snapshot) {
